@@ -53,9 +53,62 @@ function FilterSelect({
   )
 }
 
+function SearchInput({
+  label,
+  value,
+  placeholder,
+  onChange,
+}: {
+  label: string
+  value: string
+  placeholder: string
+  onChange: (v: string) => void
+}) {
+  const [focused, setFocused] = useState(false)
+  return (
+    <div className="flex flex-col gap-[7px] flex-1 min-w-[200px]">
+      <label className="font-condensed font-semibold text-[10px] tracking-[.18em] text-dim uppercase">
+        {label}
+      </label>
+      <div
+        className="flex items-center gap-[10px] bg-surface rounded-[6px] px-[14px] py-[11px] transition-colors"
+        style={{
+          border: `1px solid ${focused ? "rgba(34,211,238,.5)" : "rgba(255,255,255,0.09)"}`,
+        }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#566273" className="w-4 h-4 shrink-0">
+          <path
+            fillRule="evenodd"
+            d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+            clipRule="evenodd"
+          />
+        </svg>
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          placeholder={placeholder}
+          className="flex-1 bg-transparent border-none outline-none text-[14px] font-sans text-secondary placeholder:text-[#4d5969]"
+        />
+        {value && (
+          <button
+            onClick={() => onChange("")}
+            className="text-dim hover:text-secondary text-[14px] leading-none"
+            aria-label="Limpar"
+          >
+            ×
+          </button>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export default function CardGrid({ cards }: CardGridProps) {
   const [search, setSearch] = useState("")
-  const [searchFocus, setSearchFocus] = useState(false)
+  const [searchCode, setSearchCode] = useState("")
   const [filterTipo, setFilterTipo] = useState("")
   const [filterRaridade, setFilterRaridade] = useState("")
   const [filterCondicao, setFilterCondicao] = useState("")
@@ -69,20 +122,23 @@ export default function CardGrid({ cards }: CardGridProps) {
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim()
+    const code = searchCode.toUpperCase().trim()
     return cards.filter((c) => {
       if (q && !c.nome.toLowerCase().includes(q)) return false
+      if (code && !c.colecao.toUpperCase().includes(code)) return false
       if (filterTipo && c.tipo !== filterTipo) return false
       if (filterRaridade && c.raridade !== filterRaridade) return false
       if (filterCondicao && c.condicao !== filterCondicao) return false
       if (filterIdioma && c.idioma !== filterIdioma) return false
       return true
     })
-  }, [cards, search, filterTipo, filterRaridade, filterCondicao, filterIdioma])
+  }, [cards, search, searchCode, filterTipo, filterRaridade, filterCondicao, filterIdioma])
 
-  const hasFilters = !!(search || filterTipo || filterRaridade || filterCondicao || filterIdioma)
+  const hasFilters = !!(search || searchCode || filterTipo || filterRaridade || filterCondicao || filterIdioma)
 
   function clearFilters() {
     setSearch("")
+    setSearchCode("")
     setFilterTipo("")
     setFilterRaridade("")
     setFilterCondicao("")
@@ -94,40 +150,19 @@ export default function CardGrid({ cards }: CardGridProps) {
       {/* Filter bar */}
       <div className="w-full max-w-[1240px] mx-auto px-6 pt-6 pb-1.5">
         <div className="flex items-end gap-[14px] flex-wrap">
-          {/* Search */}
-          <div className="flex flex-col gap-[7px] flex-1 min-w-[240px]">
-            <label className="font-condensed font-semibold text-[10px] tracking-[.18em] text-dim uppercase">
-              BUSCAR
-            </label>
-            <div
-              className="flex items-center gap-[10px] bg-surface rounded-[6px] px-[14px] py-[11px] transition-colors"
-              style={{
-                border: `1px solid ${searchFocus ? "rgba(34,211,238,.5)" : "rgba(255,255,255,0.09)"}`,
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="#566273"
-                className="w-4 h-4 shrink-0"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                onFocus={() => setSearchFocus(true)}
-                onBlur={() => setSearchFocus(false)}
-                placeholder="Nome da carta…"
-                className="flex-1 bg-transparent border-none outline-none text-[14px] font-sans text-secondary placeholder:text-[#4d5969]"
-              />
-            </div>
-          </div>
+          <SearchInput
+            label="BUSCAR"
+            value={search}
+            placeholder="Nome da carta…"
+            onChange={setSearch}
+          />
+
+          <SearchInput
+            label="CÓDIGO"
+            value={searchCode}
+            placeholder="Ex: SR13-PT001"
+            onChange={setSearchCode}
+          />
 
           <FilterSelect label="TIPO" value={filterTipo} options={tipos} onChange={setFilterTipo} />
           <FilterSelect label="RARIDADE" value={filterRaridade} options={raridades} onChange={setFilterRaridade} />

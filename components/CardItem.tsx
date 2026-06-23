@@ -2,7 +2,9 @@
 
 import { EnrichedCard } from "@/types/card"
 import Image from "next/image"
-import { useCallback, useRef } from "react"
+import { useCallback, useRef, useState } from "react"
+
+const CARD_BACK = "https://images.ygoprodeck.com/images/cards/back.jpg"
 
 const RARITY_MAP: Record<string, { label: string; color: string }> = {
   "Comum": { label: "COMUM", color: "#8b98a8" },
@@ -38,6 +40,8 @@ export default function CardItem({ card, onClick }: CardItemProps) {
   const rootRef = useRef<HTMLButtonElement>(null)
   const sheenRef = useRef<HTMLDivElement>(null)
   const rar = getRarity(card.raridade)
+  const [imgSrc, setImgSrc] = useState(card.imageUrl ?? CARD_BACK)
+  const [imgFailed, setImgFailed] = useState(false)
 
   const onTilt = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     const el = rootRef.current
@@ -65,6 +69,14 @@ export default function CardItem({ card, onClick }: CardItemProps) {
     if (sheen) sheen.style.opacity = "0"
   }, [])
 
+  function handleImgError() {
+    if (imgSrc !== CARD_BACK) {
+      setImgSrc(CARD_BACK)
+    } else {
+      setImgFailed(true)
+    }
+  }
+
   return (
     <button
       ref={rootRef}
@@ -86,13 +98,15 @@ export default function CardItem({ card, onClick }: CardItemProps) {
           style={{ background: rar.color, boxShadow: `0 0 12px ${rar.color}` }}
         />
 
-        {card.imageUrl ? (
+        {!imgFailed ? (
           <Image
-            src={card.imageUrl}
+            src={imgSrc}
             alt={card.nome}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
             className="object-cover"
+            onError={handleImgError}
+            unoptimized
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center opacity-20">

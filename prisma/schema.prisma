@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model GlobalCard {
+  id        Int      @id
+  name      String   @unique
+  namePt    String?
+  type      String
+  frameType String
+  desc      String
+  descPt    String?
+  atk       Int?
+  def       Int?
+  level     Int?
+  race      String?
+  attribute String?
+  imageUrl  String
+  updatedAt DateTime @updatedAt
+
+  sets CardSet[]
+}
+
+model CardSet {
+  setCode   String  @id
+  setName   String
+  setRarity String?
+  cardId    Int
+
+  card GlobalCard @relation(fields: [cardId], references: [id])
+
+  @@index([cardId])
+}
