@@ -1,7 +1,7 @@
 "use client"
 
 import { EnrichedCard } from "@/types/card"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const RARITY_MAP: Record<string, { label: string; color: string }> = {
   "Comum": { label: "COMUM", color: "#8b98a8" },
@@ -55,6 +55,8 @@ function StatChip({ label, value }: { label: string; value: string | number }) {
 }
 
 export default function CardModal({ card, onClose }: CardModalProps) {
+  const [descLang, setDescLang] = useState<"pt" | "en">("pt")
+
   useEffect(() => {
     if (!card) return
     const handleKey = (e: KeyboardEvent) => {
@@ -72,6 +74,8 @@ export default function CardModal({ card, onClose }: CardModalProps) {
 
   const rar = getRarity(card.raridade)
   const formattedPrice = card.preco.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+  const hasBothLangs = !!(card.descPt && card.descEn)
+  const activeDesc = descLang === "pt" ? (card.descPt ?? card.descEn) : (card.descEn ?? card.descPt)
 
   const stats: { label: string; value: number }[] = []
   if (card.level != null) stats.push({ label: "NÍVEL", value: card.level })
@@ -148,13 +152,33 @@ export default function CardModal({ card, onClose }: CardModalProps) {
             {card.tipo}
           </p>
 
-          {card.desc && (
-            <p
-              className="font-sans text-[13px] leading-[1.6] text-muted italic pl-[14px] mb-[22px]"
-              style={{ borderLeft: `2px solid ${rar.color}` }}
-            >
-              {card.desc}
-            </p>
+          {activeDesc && (
+            <div className="mb-[22px]">
+              {hasBothLangs && (
+                <div className="flex gap-[6px] mb-[10px]">
+                  {(["pt", "en"] as const).map((lang) => (
+                    <button
+                      key={lang}
+                      onClick={() => setDescLang(lang)}
+                      className="font-condensed font-bold text-[10px] tracking-[.16em] px-[10px] py-[4px] rounded-[4px] transition-colors"
+                      style={{
+                        background: descLang === lang ? `${rar.color}22` : "transparent",
+                        color: descLang === lang ? rar.color : "#5e6b7a",
+                        border: `1px solid ${descLang === lang ? rar.color + "55" : "rgba(255,255,255,0.08)"}`,
+                      }}
+                    >
+                      {lang.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+              )}
+              <p
+                className="font-sans text-[13px] leading-[1.6] text-muted italic pl-[14px]"
+                style={{ borderLeft: `2px solid ${rar.color}` }}
+              >
+                {activeDesc}
+              </p>
+            </div>
           )}
 
           {stats.length > 0 && (

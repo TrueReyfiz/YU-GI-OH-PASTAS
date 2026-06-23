@@ -31,6 +31,8 @@ export interface APISetResponse {
 export interface EnrichedCard extends CollectionCard {
   apiId?: number
   desc?: string
+  descPt?: string
+  descEn?: string
   atk?: number
   def?: number
   level?: number

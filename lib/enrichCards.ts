@@ -82,11 +82,19 @@ async function fetchCardsBySetName(setName: string, language?: string): Promise<
   }
 }
 
-function toEnriched(local: CollectionCard, apiCard: APICard): EnrichedCard {
+function toEnriched(
+  local: CollectionCard,
+  apiCard: APICard,
+  ptDesc?: string,
+  enDesc?: string
+): EnrichedCard {
+  const resolvedEn = enDesc ?? apiCard.desc
   return {
     ...local,
     apiId: apiCard.id,
-    desc: apiCard.desc,
+    desc: resolvedEn,
+    descPt: ptDesc,
+    descEn: resolvedEn,
     atk: apiCard.atk,
     def: apiCard.def,
     level: apiCard.level,
@@ -104,6 +112,9 @@ export async function enrichCards(collection: CollectionCard[]): Promise<Enriche
   const byEn = new Map<string, Map<string, APICard>>()
   // Flat map: "SR13-EN010" -> APICard, built from card_sets of every EN card fetched
   const bySetCode = new Map<string, APICard>()
+  // Cross-language lookup by card ID
+  const byPtId = new Map<number, APICard>()
+  const byEnId = new Map<number, APICard>()
 
   await Promise.all(
     uniqueSetCodes.map(async (code) => {
@@ -116,12 +127,16 @@ export async function enrichCards(collection: CollectionCard[]): Promise<Enriche
       ])
 
       const ptMap = new Map<string, APICard>()
-      for (const card of ptCards) ptMap.set(norm(card.name), card)
+      for (const card of ptCards) {
+        ptMap.set(norm(card.name), card)
+        byPtId.set(card.id, card)
+      }
       byPt.set(code, ptMap)
 
       const enMap = new Map<string, APICard>()
       for (const card of enCards) {
         enMap.set(norm(card.name), card)
+        byEnId.set(card.id, card)
         for (const cs of card.card_sets ?? []) {
           if (!bySetCode.has(cs.set_code)) bySetCode.set(cs.set_code, card)
         }
@@ -136,16 +151,25 @@ export async function enrichCards(collection: CollectionCard[]): Promise<Enriche
 
     // 1. PT name match (diacritic-normalized)
     const ptCard = byPt.get(code)?.get(key)
-    if (ptCard) return toEnriched(local, ptCard)
+    if (ptCard) {
+      const enPair = byEnId.get(ptCard.id)
+      return toEnriched(local, ptCard, ptCard.desc, enPair?.desc)
+    }
 
     // 2. EN name match (for English-language cards whose nome is already in English)
     const enCard = byEn.get(code)?.get(key)
-    if (enCard) return toEnriched(local, enCard)
+    if (enCard) {
+      const ptPair = byPtId.get(enCard.id)
+      return toEnriched(local, enCard, ptPair?.desc, enCard.desc)
+    }
 
     // 3. Set-code match: any language suffix -> EN suffix -> lookup in bySetCode
     const enCode = toEnCode(local.colecao)
     const codeCard = bySetCode.get(enCode) ?? bySetCode.get(local.colecao)
-    if (codeCard) return toEnriched(local, codeCard)
+    if (codeCard) {
+      const ptPair = byPtId.get(codeCard.id)
+      return toEnriched(local, codeCard, ptPair?.desc, codeCard.desc)
+    }
 
     // 4. Manual override from image-overrides.json (tokens, promos, accessories)
     const overrideUrl = imageOverrides.get(local.colecao)
@@ -168,7 +192,9 @@ export async function enrichCards(collection: CollectionCard[]): Promise<Enriche
   const afterEnSearch = enriched.map((card) => {
     if (card.imageUrl || card.idioma !== "Inglês") return card
     const apiCard = enNameCache.get(card.nome)
-    return apiCard ? toEnriched(card, apiCard) : card
+    if (!apiCard) return card
+    const ptPair = byPtId.get(apiCard.id)
+    return toEnriched(card, apiCard, ptPair?.desc, apiCard.desc)
   })
 
   // 6. Name deduplication: if another card with the same nome already has an image, reuse it
