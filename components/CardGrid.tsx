@@ -9,7 +9,7 @@ interface CardGridProps {
   cards: EnrichedCard[]
 }
 
-function uniqueSorted(values: string[]): string[] {
+function unique(values: string[]): string[] {
   return Array.from(new Set(values)).sort()
 }
 
@@ -25,37 +25,47 @@ function FilterSelect({
   onChange: (v: string) => void
 }) {
   return (
-    <div className="flex flex-col gap-1 min-w-[130px]">
-      <label className="text-xs text-gray-500 uppercase tracking-wider">{label}</label>
-      <select
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="bg-dark-surface border border-dark-border text-gray-200 text-sm rounded-md px-3 py-2
-                   focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-colors"
-      >
-        <option value="">Todos</option>
-        {options.map((opt) => (
-          <option key={opt} value={opt}>
-            {opt}
+    <div className="flex flex-col gap-[7px] min-w-[148px]">
+      <label className="font-condensed font-semibold text-[10px] tracking-[.18em] text-dim uppercase">
+        {label}
+      </label>
+      <div className="relative">
+        <select
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full appearance-none bg-surface border border-white/[0.09] rounded-[6px] pl-[13px] pr-8 py-[11px] text-[13px] font-sans outline-none cursor-pointer"
+          style={{ color: value ? "#22d3ee" : "#aeb8c6" }}
+        >
+          <option value="" style={{ background: "#0a0e14", color: "#dfe6ef" }}>
+            Todos
           </option>
-        ))}
-      </select>
+          {options.map((opt) => (
+            <option key={opt} value={opt} style={{ background: "#0a0e14", color: "#dfe6ef" }}>
+              {opt}
+            </option>
+          ))}
+        </select>
+        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-dim text-[9px] pointer-events-none select-none">
+          ▼
+        </span>
+      </div>
     </div>
   )
 }
 
 export default function CardGrid({ cards }: CardGridProps) {
   const [search, setSearch] = useState("")
+  const [searchFocus, setSearchFocus] = useState(false)
   const [filterTipo, setFilterTipo] = useState("")
   const [filterRaridade, setFilterRaridade] = useState("")
   const [filterCondicao, setFilterCondicao] = useState("")
   const [filterIdioma, setFilterIdioma] = useState("")
   const [selected, setSelected] = useState<EnrichedCard | null>(null)
 
-  const tipos = useMemo(() => uniqueSorted(cards.map((c) => c.tipo)), [cards])
-  const raridades = useMemo(() => uniqueSorted(cards.map((c) => c.raridade)), [cards])
-  const condicoes = useMemo(() => uniqueSorted(cards.map((c) => c.condicao)), [cards])
-  const idiomas = useMemo(() => uniqueSorted(cards.map((c) => c.idioma)), [cards])
+  const tipos = useMemo(() => unique(cards.map((c) => c.tipo)), [cards])
+  const raridades = useMemo(() => unique(cards.map((c) => c.raridade)), [cards])
+  const condicoes = useMemo(() => unique(cards.map((c) => c.condicao)), [cards])
+  const idiomas = useMemo(() => unique(cards.map((c) => c.idioma)), [cards])
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim()
@@ -69,7 +79,7 @@ export default function CardGrid({ cards }: CardGridProps) {
     })
   }, [cards, search, filterTipo, filterRaridade, filterCondicao, filterIdioma])
 
-  const hasFilters = search || filterTipo || filterRaridade || filterCondicao || filterIdioma
+  const hasFilters = !!(search || filterTipo || filterRaridade || filterCondicao || filterIdioma)
 
   function clearFilters() {
     setSearch("")
@@ -82,63 +92,89 @@ export default function CardGrid({ cards }: CardGridProps) {
   return (
     <>
       {/* Filter bar */}
-      <div className="bg-dark-card border-b border-dark-border">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4">
+      <div className="w-full max-w-[1240px] mx-auto px-6 pt-6 pb-1.5">
+        <div className="flex items-end gap-[14px] flex-wrap">
           {/* Search */}
-          <div className="flex flex-col gap-1">
-            <label className="text-xs text-gray-500 uppercase tracking-wider">Buscar por nome</label>
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Ex: Blue-Eyes White Dragon..."
-              className="bg-dark-surface border border-dark-border text-gray-200 text-sm rounded-md px-3 py-2
-                         focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-colors
-                         placeholder:text-gray-600 w-full max-w-md"
-            />
-          </div>
-
-          {/* Dropdowns */}
-          <div className="flex flex-wrap gap-3 items-end">
-            <FilterSelect label="Tipo" value={filterTipo} options={tipos} onChange={setFilterTipo} />
-            <FilterSelect label="Raridade" value={filterRaridade} options={raridades} onChange={setFilterRaridade} />
-            <FilterSelect label="Condição" value={filterCondicao} options={condicoes} onChange={setFilterCondicao} />
-            <FilterSelect label="Idioma" value={filterIdioma} options={idiomas} onChange={setFilterIdioma} />
-
-            {hasFilters && (
-              <button
-                onClick={clearFilters}
-                className="text-xs text-gray-500 hover:text-gold underline underline-offset-2 transition-colors pb-2"
+          <div className="flex flex-col gap-[7px] flex-1 min-w-[240px]">
+            <label className="font-condensed font-semibold text-[10px] tracking-[.18em] text-dim uppercase">
+              BUSCAR
+            </label>
+            <div
+              className="flex items-center gap-[10px] bg-surface rounded-[6px] px-[14px] py-[11px] transition-colors"
+              style={{
+                border: `1px solid ${searchFocus ? "rgba(34,211,238,.5)" : "rgba(255,255,255,0.09)"}`,
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="#566273"
+                className="w-4 h-4 shrink-0"
               >
-                Limpar filtros
-              </button>
-            )}
+                <path
+                  fillRule="evenodd"
+                  d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                onFocus={() => setSearchFocus(true)}
+                onBlur={() => setSearchFocus(false)}
+                placeholder="Nome da carta…"
+                className="flex-1 bg-transparent border-none outline-none text-[14px] font-sans text-secondary placeholder:text-[#4d5969]"
+              />
+            </div>
           </div>
+
+          <FilterSelect label="TIPO" value={filterTipo} options={tipos} onChange={setFilterTipo} />
+          <FilterSelect label="RARIDADE" value={filterRaridade} options={raridades} onChange={setFilterRaridade} />
+          <FilterSelect label="CONDIÇÃO" value={filterCondicao} options={condicoes} onChange={setFilterCondicao} />
+          <FilterSelect label="IDIOMA" value={filterIdioma} options={idiomas} onChange={setFilterIdioma} />
+
+          {hasFilters && (
+            <button
+              onClick={clearFilters}
+              className="font-condensed font-semibold text-[12px] tracking-[.06em] text-gold hover:opacity-70 transition-opacity pb-[11px] bg-transparent border-none cursor-pointer"
+            >
+              LIMPAR ×
+            </button>
+          )}
+        </div>
+
+        <div className="font-mono text-[11px] text-[#566273] mt-[18px] tracking-[.02em]">
+          {filtered.length === cards.length
+            ? `${cards.length} ENTRADAS NA VITRINE`
+            : `${filtered.length} DE ${cards.length} ENTRADAS`}
         </div>
       </div>
 
-      {/* Results summary */}
-      <div className="max-w-7xl mx-auto px-4 pt-4 pb-1 flex items-center justify-between">
-        <p className="text-xs text-gray-600">
-          {filtered.length === cards.length
-            ? `${cards.length} cartas`
-            : `${filtered.length} de ${cards.length} cartas`}
-        </p>
-      </div>
-
       {/* Grid */}
-      <main className="max-w-7xl mx-auto px-4 pb-10">
+      <main className="w-full max-w-[1240px] mx-auto px-6 pt-3.5 pb-[60px]">
         {filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-24 text-center gap-3">
-            <p className="text-gray-600 text-lg">Nenhuma carta encontrada</p>
-            <button onClick={clearFilters} className="text-sm text-gold hover:text-gold-light transition-colors">
-              Limpar filtros
+          <div className="flex flex-col items-center justify-center py-24 gap-[14px] text-center">
+            <p className="font-condensed font-semibold text-[18px] text-dim">
+              Nenhuma carta encontrada com esses filtros
+            </p>
+            <button
+              onClick={clearFilters}
+              className="font-condensed font-semibold text-[13px] tracking-[.06em] text-gold border border-gold/40 rounded-[6px] py-[10px] px-[18px] hover:bg-gold/5 transition-colors"
+            >
+              LIMPAR FILTROS
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 pt-3">
+          <div
+            className="grid"
+            style={{
+              gridTemplateColumns: "repeat(auto-fill, minmax(186px, 1fr))",
+              gap: "22px 18px",
+            }}
+          >
             {filtered.map((card, i) => (
-              <CardItem key={`${card.nome}-${i}`} card={card} onClick={() => setSelected(card)} />
+              <CardItem key={`${card.colecao}-${i}`} card={card} onClick={() => setSelected(card)} />
             ))}
           </div>
         )}

@@ -11,7 +11,7 @@ export default async function Page() {
   const totalValue = enriched.reduce((sum, c) => sum + c.preco * c.quantidade, 0)
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full">
       <Header totalCards={totalCards} totalValue={totalValue} />
       <CardGrid cards={enriched} />
     </div>

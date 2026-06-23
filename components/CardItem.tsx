@@ -1,70 +1,144 @@
+"use client"
+
 import { EnrichedCard } from "@/types/card"
 import Image from "next/image"
+import { useCallback, useRef } from "react"
+
+const RARITY_MAP: Record<string, { label: string; color: string }> = {
+  "Comum": { label: "COMUM", color: "#8b98a8" },
+  "Raro": { label: "RARO", color: "#5aa9ff" },
+  "Super Raro": { label: "SUPER RARO", color: "#c3b6ff" },
+  "Ultra Raro": { label: "ULTRA RARO", color: "#fbbf24" },
+  "Secreto Raro": { label: "SECRETO RARO", color: "#22d3ee" },
+  "Gold Raro": { label: "GOLD RARO", color: "#e3a83a" },
+  "Quarter Century Secret Rare": { label: "QUARTER CENTURY", color: "#9fe7ff" },
+  "Parallel Raro": { label: "PARALLEL RARO", color: "#7ee0c0" },
+  "Ultimate Raro": { label: "ULTIMATE RARO", color: "#ff9d5a" },
+  "common": { label: "COMUM", color: "#8b98a8" },
+  "rare": { label: "RARO", color: "#5aa9ff" },
+  "super rare": { label: "SUPER RARO", color: "#c3b6ff" },
+  "ultra rare": { label: "ULTRA RARO", color: "#fbbf24" },
+  "secret rare": { label: "SECRETO RARO", color: "#22d3ee" },
+  "ultimate rare": { label: "ULTIMATE RARO", color: "#ff9d5a" },
+}
+
+function getRarity(raridade: string) {
+  return (
+    RARITY_MAP[raridade] ??
+    RARITY_MAP[raridade.toLowerCase()] ?? { label: raridade.toUpperCase(), color: "#8b98a8" }
+  )
+}
 
 interface CardItemProps {
   card: EnrichedCard
   onClick: () => void
 }
 
-const RARITY_COLORS: Record<string, string> = {
-  common: "text-gray-400",
-  rare: "text-blue-400",
-  "super rare": "text-purple-400",
-  "ultra rare": "text-gold",
-  "secret rare": "text-gold-light",
-  "ultimate rare": "text-amber-300",
-}
-
-function rarityColor(raridade: string): string {
-  return RARITY_COLORS[raridade.toLowerCase()] ?? "text-gray-400"
-}
-
 export default function CardItem({ card, onClick }: CardItemProps) {
+  const rootRef = useRef<HTMLButtonElement>(null)
+  const sheenRef = useRef<HTMLDivElement>(null)
+  const rar = getRarity(card.raridade)
+
+  const onTilt = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    const el = rootRef.current
+    if (!el) return
+    const r = el.getBoundingClientRect()
+    const px = (e.clientX - r.left) / r.width
+    const py = (e.clientY - r.top) / r.height
+    const ry = (px - 0.5) * 14
+    const rx = -(py - 0.5) * 14
+    el.style.transform = `perspective(900px) rotateY(${ry}deg) rotateX(${rx}deg) translateY(-4px) scale(1.02)`
+    el.style.zIndex = "5"
+    const sheen = sheenRef.current
+    if (sheen) {
+      sheen.style.opacity = "1"
+      sheen.style.background = `radial-gradient(circle at ${px * 100}% ${py * 100}%, rgba(255,255,255,.45), rgba(140,225,255,.15) 32%, transparent 62%)`
+    }
+  }, [])
+
+  const onLeave = useCallback(() => {
+    const el = rootRef.current
+    if (!el) return
+    el.style.transform = ""
+    el.style.zIndex = ""
+    const sheen = sheenRef.current
+    if (sheen) sheen.style.opacity = "0"
+  }, [])
+
   return (
     <button
+      ref={rootRef}
       onClick={onClick}
-      className="group relative bg-dark-card border border-dark-border rounded-lg overflow-hidden
-                 hover:border-gold hover:shadow-gold-glow transition-all duration-200 text-left w-full"
+      onMouseMove={onTilt}
+      onMouseLeave={onLeave}
+      className="relative w-full text-left rounded-[6px] overflow-hidden bg-card border border-white/[0.06] cursor-pointer"
+      style={{
+        transformStyle: "preserve-3d",
+        transition: "transform .28s cubic-bezier(0.22,1,0.36,1)",
+        willChange: "transform",
+      }}
     >
-      <div className="aspect-[421/614] relative bg-dark-surface">
+      {/* Image area */}
+      <div className="relative bg-surface" style={{ aspectRatio: "421/614" }}>
+        {/* Rarity top fillet */}
+        <div
+          className="absolute top-0 left-0 right-0 h-[3px] z-10"
+          style={{ background: rar.color, boxShadow: `0 0 12px ${rar.color}` }}
+        />
+
         {card.imageUrl ? (
           <Image
             src={card.imageUrl}
             alt={card.nome}
             fill
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
+            className="object-cover"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-dark-border">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-12 h-12 opacity-30"
-            >
+          <div className="absolute inset-0 flex items-center justify-center opacity-20">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#5e6b7a" className="w-12 h-12">
               <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
             </svg>
           </div>
         )}
 
+        {/* Sheen overlay (tilt highlight) */}
+        <div
+          ref={sheenRef}
+          className="absolute inset-0 pointer-events-none"
+          style={{ opacity: 0, transition: "opacity .2s", mixBlendMode: "overlay" }}
+        />
+
+        {/* Quantity badge */}
         {card.quantidade > 1 && (
-          <span className="absolute top-1.5 right-1.5 bg-dark/80 border border-gold text-gold text-xs font-bold px-1.5 py-0.5 rounded">
-            x{card.quantidade}
+          <span
+            className="absolute top-2 right-2 z-10 font-condensed font-bold text-[11px] tracking-[.05em] text-[#e9eef5] border border-white/[.14] rounded-[3px] px-1.5 py-0.5"
+            style={{ background: "rgba(5,8,12,.78)" }}
+          >
+            ×{card.quantidade}
           </span>
         )}
-
-        <span className="absolute top-1.5 left-1.5 bg-dark/80 border border-dark-border text-gray-300 text-xs px-1.5 py-0.5 rounded uppercase tracking-wide">
-          {card.idioma}
-        </span>
       </div>
 
-      <div className="p-2.5">
-        <p className="text-sm font-semibold text-gray-100 truncate leading-tight">{card.nome}</p>
-        <p className={`text-xs mt-0.5 truncate ${rarityColor(card.raridade)}`}>{card.raridade}</p>
-        <div className="flex items-center justify-between mt-1.5">
-          <span className="text-xs text-gray-500">{card.colecao}</span>
-          <span className="text-xs font-bold text-gold">
+      {/* Info footer */}
+      <div className="px-[13px] pt-3 pb-[14px]">
+        <div
+          className="font-condensed font-bold text-[9px] tracking-[.18em] uppercase mb-[5px]"
+          style={{ color: rar.color }}
+        >
+          {rar.label}
+        </div>
+        <div
+          className="font-condensed font-semibold text-[14px] leading-[1.12] min-h-[32px] text-secondary"
+          style={{ textWrap: "pretty" } as React.CSSProperties}
+        >
+          {card.nome}
+        </div>
+        <div className="flex items-baseline justify-between mt-[10px] gap-2">
+          <span className="font-mono text-[10px] tracking-[.02em] text-dim truncate">
+            {card.colecao}
+          </span>
+          <span className="font-condensed font-bold text-[14px] text-primary shrink-0">
             {card.preco.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
           </span>
         </div>

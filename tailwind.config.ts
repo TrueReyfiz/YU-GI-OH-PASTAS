@@ -8,23 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        gold: {
-          DEFAULT: "#D4AF37",
-          light: "#F0D060",
-          dark: "#A08020",
-          muted: "#8B7322",
-        },
-        dark: {
-          DEFAULT: "#0D0D0D",
-          card: "#1A1A1A",
-          surface: "#242424",
-          border: "#2E2E2E",
-        },
+      fontFamily: {
+        sans: ["var(--font-roboto)", "sans-serif"],
+        condensed: ["var(--font-roboto-condensed)", "sans-serif"],
+        mono: ["var(--font-roboto-mono)", "monospace"],
       },
-      boxShadow: {
-        gold: "0 0 0 1px #D4AF37",
-        "gold-glow": "0 0 12px rgba(212,175,55,0.4)",
+      colors: {
+        bg: "#080b10",
+        card: "#0a0e14",
+        surface: "#05080c",
+        gold: "#fbbf24",
+        dim: "#5e6b7a",
+        muted: "#9aa6b5",
+        primary: "#f4f7fb",
+        secondary: "#eef2f7",
+        body: "#dfe6ef",
       },
     },
   },
