@@ -1,0 +1,58 @@
+{
+  "SR13-PT001": {
+    "pt": "Você pode Invocar este card por Invocação-Especial (do seu Cemitério) ao devolver 1 monstro \"Mundo Negro\" de Nível 7 ou menor que você controla para a mão. Se este card for descartado para o Cemitério por efeito de card: Você pode adicionar 1 monstro \"Mundo Negro\" de Nível 5 ou superior do seu Deck à sua mão, exceto \"Rei-Beaux, Rei Supremo do Mundo Negro\", depois, se este card foi descartado da sua mão para o seu Cemitério pelo efeito de card do oponente, você pode Invocar por Invocação-Especial 1 monstro \"Mundo Negro\" de Nível 4 ou menor do seu Deck ou Cemitério para qualquer campo."
+  },
+  "SR13-PT002": {
+    "pt": "Você só pode Invocar por Invocação-Especial \"Genta, Zelador do Mundo Negro\" uma vez por turno. Você pode descartar este card para o Cemitério; adicione 1 \"Os Portões do Mundo Negro\" do seu Deck à sua mão. Se este card for banido e você controlar um card \"Mundo Negro\": Você pode Invocar este card por Invocação-Especial."
+  },
+  "SR13-PT014": {
+    "pt": "Se este card for descartado para o Cemitério por um efeito de card: Escolha 1 Card de Magia/Armadilha no campo; destrua-o."
+  },
+  "SR13-PT013": {
+    "pt": "Se este card for descartado para o Cemitério por um efeito de card: Escolha 1 monstro no campo; destrua-o."
+  },
+  "SR13-PT006": {
+    "pt": "Se este card for descartado para o Cemitério por um efeito de card: Se ele foi descartado da sua mão para o seu Cemitério pelo efeito de card do oponente, escolha 1 monstro do Tipo Demônio no campo; Invoque este card por Invocação-Especial do Cemitério, depois esse alvo (se houver) ganha 500 de ATK."
+  },
+  "SR13-PT003": {
+    "pt": "Se este card for descartado para o Cemitério por efeito de card: Você pode escolher 1 monstro \"Mundo Negro\" no seu Cemitério, exceto \"Parl, Eremita do Mundo Negro\"; Invoque-o por Invocação-Especial em qualquer campo, depois, se este card foi descartado da sua mão para o seu Cemitério pelo efeito de card do oponente, você pode Invocar por Invocação-Especial em qualquer campo 1 dos seus monstros do tipo Demônio que estiver banido, na sua mão ou no seu Cemitério. Você só pode usar este efeito de \"Parl, Eremita do Mundo Negro\" uma vez por turno."
+  },
+  "SR13-PT025": {
+    "pt": "Escolha até 3 cards em qualquer(s) Cemitério(s); bana-os, depois descarte 1 monstro do tipo Demônio. Durante sua Fase Principal, exceto no turno em que este card foi enviado ao Cemitério: Você pode banir este card do seu Cemitério, depois escolha 1 dos seus monstros do tipo Demônio banidos; adicione-o à sua mão. Você só pode ativar 1 \"Fantoches do Mundo Negro\" por turno."
+  },
+  "SR13-PT042": {
+    "pt": "Durante a Fase Principal: Invoque por Invocação-Fusão 1 Monstro de Fusão do tipo Demônio do seu Deck Extra, ao banir os materiais mencionados nele do seu campo ou Cemitério. Se estiver Invocando por Fusão um monstro \"Mundo Negro\" desta forma, você também pode descartar monstros como material. Durante sua Fase Principal, se este card estiver no seu Cemitério: Você pode adicionar este card à sua mão, depois descarte 1 monstro \"Mundo Negro\". Você só pode usar cada efeito de \"Acessão do Mundo Negro\" uma vez por turno."
+  },
+  "SR13-PT026": {
+    "pt": "Durante sua Fase Principal: Você pode descartar 1 monstro \"Mundo Negro\", e se isso acontecer, os monstros \"Mundo Negro\" que você controla atualmente ganham ATK igual ao Nível que o monstro descartado tinha na mão x 100, até o final deste turno. Se um monstro cujo Tipo original seja Demônio for descartado da sua mão pelo efeito de um card \"Mundo Negro\" ou pelo efeito de card do oponente, mesmo durante a Etapa de Dano: Você pode descartar 1 card, depois comprará 2 cards. Você só pode usar cada efeito de \"Arquivos do Mundo Negro\" uma vez por turno."
+  },
+  "SR13-PT041": {
+    "pt": "\"Grapha, Senhor Dragão do Mundo Negro\" + 1 monstro de TREVAS\nQuando seu oponente ativar um efeito de monstro, ou um Card de Magia/Armadilha Normal, enquanto você tiver card(s) na mão (Efeito Rápido): Você pode ativar este efeito; o efeito ativado torna-se \"Seu oponente descarta 1 card\". Você só pode usar este efeito de \"Grapha, Suserano Dragão do Mundo Negro\" uma vez por turno. Se este card Invocado por Fusão no controle de seu dono sair do campo por causa de um card do oponente: Você pode Invocar por Invocação-Especial 1 do(s) seu(s) \"Grapha, Senhor Dragão do Mundo Negro\" que estiver banido ou no seu Cemitério, depois cada duelista com cards na mão descarta 1 card."
+  },
+  "DABL-PT082": {
+    "pt": "Você pode revelar este card e 1 monstro do tipo Demônio na sua mão; Invoque por Invocação-Especial 1 deles e descarte o outro. Quando um monstro for destruído em batalha envolvendo seu monstro do tipo Demônio, enquanto este card estiver no seu Cemitério: Você pode adicionar este card à sua mão. Você só pode usar cada efeito de \"Catalisador Zalamander\" uma vez por turno."
+  },
+  "MP23-PT157": {
+    "pt": "Você pode escolher 1 monstro de LUZ ou TREVAS em qualquer Cemitério; bana-o, e se isso acontecer, Invoque este card por Invocação-Especial da sua mão. Este é um Efeito Rápido se seu oponente controlar um monstro. Se este card for Invocado por Invocação-Especial: Você pode ativar este efeito; durante a Fase Final deste turno, adicione 1 monstro do tipo Dragão do seu Deck ou Cemitério à sua mão, exceto \"Bistial Magnamhut\". Você só pode usar cada efeito de \"Bistial Magnamhut\" uma vez por turno."
+  },
+  "MP23-PT154": {
+    "pt": "Você pode enviar este card da sua mão ou campo para o Cemitério, depois escolha 1 monstro com a face para cima que seu oponente controla; envie 1 Monstro de Sincro \"Asanegra\" ou 1 \"Dragão de Asas Negras\" do seu Deck Extra ao Cemitério, e se isso acontecer, até o final deste turno, o monstro escolhido perde 700 de ATK, além de ter seus efeitos negados. Este é um Efeito Rápido se você controlar um Monstro de Sincro de TREVAS. Você só pode usar este efeito de \"Asanegra - Chinook, A Explosão de Neve\" uma vez por turno."
+  },
+  "MP23-PT188": {
+    "pt": "1 Regulador de TREVAS + 1+ monstro(s) não-Regulador\nSe este card for Invocado por Invocação-Sincro: Você pode enviar 1 monstro \"Asanegra\" do seu Deck ao Cemitério, e se isso acontecer, o Nível deste card torna-se igual ao daquele monstro. Quando este card destruir um monstro em batalha e enviá-lo ao Cemitério: Você pode banir 1 monstro \"Asanegra\" do seu Cemitério ou campo com a face para cima, exceto o monstro destruído; Invoque por Invocação-Especial o monstro destruído para o seu campo em Posição de Defesa. Você só pode usar cada efeito de \"Asanegra - Boretempestade, O Vento Perverso\" uma vez por turno."
+  },
+  "MAZE-PT014": {
+    "pt": "1 Monstro de Fusão \"HERÓI do Elemento\" + 1+ monstro(s) Guerreiro\nDeve ser Invocado por Invocação-Fusão. Ganha 300 de ATK para cada material usado em sua Invocação. Este card pode realizar um número de ataques em monstros em cada Fase de Batalha, até o número de Monstros de Fusão usados como material em sua Invocação. Após o cálculo de dano, se este card batalhar com um monstro: Destrua aquele monstro, e se isso acontecer, cause dano ao seu oponente igual ao seu ATK original. Se este card Invocado por Fusão for destruído: Invoque por Invocação-Especial 1 monstro Guerreiro da sua mão ou Deck."
+  },
+  "DUNE-PT096": {
+    "pt": "Se monstro(s) do tipo Demônio, exceto \"Diabolica, A General Draconique\", for(em) enviado(s) ao seu Cemitério por efeito de card (exceto durante a Etapa de Dano): Você pode Invocar este card por Invocação-Especial do seu Cemitério (se estava lá quando o monstro foi enviado) ou da mão (mesmo que não), mas bana-o quando ele sair do campo. Se este card for enviado ao Cemitério por efeito de card: Você pode escolher 1 monstro do tipo Demônio no seu Cemitério, exceto \"Diabolica, A General Draconique\"; adicione-o à sua mão. Você só pode usar 1 efeito de \"Diabolica, A General Draconique\" por turno, e apenas uma vez naquele turno."
+  },
+  "SDCB-PT049": {
+    "en": "When this card is Summoned: You can place 1 \"Crystal Beast\" monster from your hand, Deck, or GY, face-up in your Spell & Trap Zone as a Continuous Spell. If this face-up card is destroyed in a Monster Zone, you can place it face-up in your Spell & Trap Zone as a Continuous Spell, instead of sending it to the GY.",
+    "pt": "Quando este card for Invocado: Você pode colocar 1 monstro \"Fera Cristalina\" da sua mão, Deck ou Cemitério, com a face para cima, na sua Zona de Magia e Armadilha como uma Magia Contínua. Se este card com a face para cima for destruído na Zona de Monstros, você pode colocá-lo com a face para cima na sua Zona de Magia e Armadilha como uma Magia Contínua, em vez de enviá-lo ao Cemitério."
+  },
+  "SDCB-PT047": {
+    "en": "(This card is always treated as an \"Ultimate Crystal\" card.)\r\nCannot be Normal Summoned/Set. Must be Special Summoned (from your hand) by having 7 \"Crystal Beast\" cards with different names on your field and/or GY. (Quick Effect): You can send all face-up \"Crystal Beast\" monsters you control to the GY; this card gains 1000 ATK for each monster sent to the GY. You can banish all \"Crystal Beast\" monsters from your GY; shuffle all cards on the field into the Deck.",
+    "pt": "(Este card é sempre tratado como um card \"Cristal Supremo\".)\nNão pode ser Invocado por Invocação-Normal/Colocado. Deve ser Invocado por Invocação-Especial (da sua mão) ao ter 7 cards \"Fera Cristalina\" com nomes diferentes no seu campo e/ou Cemitério. (Efeito Rápido): Você pode enviar todos os monstros \"Fera Cristalina\" com a face para cima que você controla ao Cemitério; este card ganha 1000 de ATK para cada monstro enviado ao Cemitério. Você pode banir todos os monstros \"Fera Cristalina\" do seu Cemitério; embaralhe todos os cards no campo no Deck."
+  }
+}

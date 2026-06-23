@@ -28,6 +28,22 @@ function toEnCode(colecao: string): string {
   return colecao.replace(/-([A-Z]{2})(\w+)/, "-EN$2")
 }
 
+interface DescOverride {
+  pt?: string
+  en?: string
+}
+
+async function loadDescOverrides(): Promise<Map<string, DescOverride>> {
+  try {
+    const filePath = path.join(process.cwd(), "public", "data", "desc-overrides.json")
+    const raw = await fs.readFile(filePath, "utf-8")
+    const data: Record<string, DescOverride> = JSON.parse(raw)
+    return new Map(Object.entries(data))
+  } catch {
+    return new Map()
+  }
+}
+
 async function loadImageOverrides(): Promise<Map<string, string>> {
   try {
     const filePath = path.join(process.cwd(), "public", "data", "image-overrides.json")
@@ -119,7 +135,11 @@ function toEnriched(
 }
 
 export async function enrichCards(collection: CollectionCard[]): Promise<EnrichedCard[]> {
-  const [setCodeToName, imageOverrides] = await Promise.all([fetchSetList(), loadImageOverrides()])
+  const [setCodeToName, imageOverrides, descOverrides] = await Promise.all([
+    fetchSetList(),
+    loadImageOverrides(),
+    loadDescOverrides(),
+  ])
   const uniqueSetCodes = Array.from(new Set(collection.map((c) => extractSetCode(c.colecao))))
 
   const byPt = new Map<string, Map<string, APICard>>()
@@ -250,11 +270,24 @@ export async function enrichCards(collection: CollectionCard[]): Promise<Enriche
     })
   )
 
-  return afterDedup.map((card) => {
+  const afterPtFill = afterDedup.map((card) => {
     if (!card.apiId || !ptFill.has(card.apiId)) return card
     const ptDesc = ptFill.get(card.apiId)!
     // Skip if the API returned the same text as EN (no real PT translation)
     if (card.descEn && ptDesc.trim() === card.descEn.trim()) return card
     return { ...card, descPt: ptDesc }
+  })
+
+  // 8. Apply manual desc-overrides.json — highest priority, keyed by collection code.
+  //    Fills any remaining gaps (cards absent from YGOProDeck PT database).
+  return afterPtFill.map((card) => {
+    const ov = descOverrides.get(card.colecao)
+    if (!ov) return card
+    return {
+      ...card,
+      descPt: ov.pt ?? card.descPt,
+      descEn: ov.en ?? card.descEn,
+      desc: ov.en ?? card.descEn ?? ov.pt ?? card.descPt,
+    }
   })
 }
