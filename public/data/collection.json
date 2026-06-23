@@ -1,0 +1,2550 @@
+{
+  "meta": {
+    "total_entradas": 254,
+    "total_cartas": 394,
+    "valor_total": 2085.91,
+    "ultima_atualizacao": "2026-06-22"
+  },
+  "cartas": [
+    {
+      "nome": "Rei-Beaux, Rei Supremo do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "SR13-PT001",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 9
+    },
+    {
+      "nome": "Grapha, Senhor Dragão do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT043",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 4.5
+    },
+    {
+      "nome": "Genta, Zelador do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "SR13-PT002",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 21
+    },
+    {
+      "nome": "Snoww, Sem Luz do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT044",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 9
+    },
+    {
+      "nome": "Ceruli, Guru do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT015",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 1.5
+    },
+    {
+      "nome": "Beiige, Vanguarda do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT010",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Catalisador Zalamander",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "DABL-PT082",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.25
+    },
+    {
+      "nome": "Sillva, Warlord of Dark World",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Raro",
+      "colecao": "EEN-EN023",
+      "quantidade": 2,
+      "condicao": "USADA",
+      "preco": 6
+    },
+    {
+      "nome": "O Começo do Fim",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "DESO-PT053",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.2
+    },
+    {
+      "nome": "Fantoches do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "SR13-PT025",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 1.5
+    },
+    {
+      "nome": "Investida ao Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SR13-PT028",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.3
+    },
+    {
+      "nome": "Arrastado para a Cova",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SR13-PT031",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.9
+    },
+    {
+      "nome": "Relampago do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SR13-PT030",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.9
+    },
+    {
+      "nome": "Portal Para o Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SR13-PT029",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Brron, Rei Insano do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT009",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.4
+    },
+    {
+      "nome": "Acessao do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "SR13-PT042",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 5
+    },
+    {
+      "nome": "Arquivos do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "SR13-PT026",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 2.2
+    },
+    {
+      "nome": "Lavagem Cerebral do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Comum",
+      "colecao": "SR13-PT035",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.45
+    },
+    {
+      "nome": "Bruma Negra",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Comum",
+      "colecao": "SR13-PT036",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.45
+    },
+    {
+      "nome": "As Forcas das Trevas",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Comum",
+      "colecao": "SR13-PT034",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.6
+    },
+    {
+      "nome": "Negocios do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SR13-PT027",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Os Portoes do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SR13-PT045",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Gren, Estrategista do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT014",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Scarr, Batedor do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT012",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.8
+    },
+    {
+      "nome": "Dourado, Wu-Lorde do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT007",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 1.5
+    },
+    {
+      "nome": "Luzente, O Senhor Inferior do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT005",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Kahkki, Guerrilheiro do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT013",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.8
+    },
+    {
+      "nome": "Latinum, Exarca do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT006",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Broww, Cacador do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT011",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 12
+    },
+    {
+      "nome": "Parl, Eremita do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "SR13-PT003",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.6
+    },
+    {
+      "nome": "Rei-Beaux, Suserano do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "SR13-PT004",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Perigo!? Lebrilope?",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "BLAR-PT088",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Perigo! Passaro-Trovao!",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR13-PT019",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Perigo!? Tsuchinoko?",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "MP19-PT220",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Perigo! Nessie!",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Gold Raro",
+      "colecao": "MGED-PT019",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 30
+    },
+    {
+      "nome": "Perigo! Pe-Grande!",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Gold Raro",
+      "colecao": "MGED-PT018",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 20
+    },
+    {
+      "nome": "Perigo! Chupa-Cabra!",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "CYHO-PT084",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 20
+    },
+    {
+      "nome": "Perigo! Homem-Mariposa!",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "SOFU-PT084",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Akashic Magician",
+      "idioma": "Inglês",
+      "tipo": "Monstro Link",
+      "raridade": "Super Raro",
+      "colecao": "SHVA-EN052",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Cavaleiro do Pesadelo Cerbero",
+      "idioma": "Português",
+      "tipo": "Monstro Link",
+      "raridade": "Super Raro",
+      "colecao": "FLOD-PT045",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Knightmare Unicorn",
+      "idioma": "Inglês",
+      "tipo": "Monstro Link",
+      "raridade": "Raro",
+      "colecao": "GEIM-EN050",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Cavaleiro do Pesadelo Grifo",
+      "idioma": "Português",
+      "tipo": "Monstro Link",
+      "raridade": "Raro",
+      "colecao": "GEIM-PT041",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2.5
+    },
+    {
+      "nome": "Knightmare Phoenix",
+      "idioma": "Inglês",
+      "tipo": "Monstro Link",
+      "raridade": "Ultra Raro",
+      "colecao": "MAMA-EN071",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Saryuja Skull Dread",
+      "idioma": "Inglês",
+      "tipo": "Monstro Link",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-EN026",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Ponto-Ovelha",
+      "idioma": "Português",
+      "tipo": "Monstro Link",
+      "raridade": "Secreto Raro",
+      "colecao": "MP21-PT018",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "Grapha, Suserano Dragao do Mundo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "SR13-PT041",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Rei Tecnico Treinador de Gigante",
+      "idioma": "Português",
+      "tipo": "Monstro XYZ",
+      "raridade": "Secreto Raro",
+      "colecao": "NUMH-PT037",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Numero 60: Dugares, o Atemporal",
+      "idioma": "Português",
+      "tipo": "Monstro XYZ",
+      "raridade": "Ultra Raro",
+      "colecao": "GFP2-PT144",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 5
+    },
+    {
+      "nome": "Dragao Fusao de Peconha Insaciavel",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Secreto Raro",
+      "colecao": "MP17-PT147",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "Bistial Magnamhut",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "MP23-PT157",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 75
+    },
+    {
+      "nome": "Dragao Imortal",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Ultra Raro",
+      "colecao": "MP23-PT085",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Alba-Lenatus, O Dragao do Abismo",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "MP23-PT080",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Garoto Geek Livromante",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "MP23-PT001",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Asanegra - Chinook, A Explosao de Neve",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "MP23-PT154",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Timaeus, O Dragao Unido",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "MP23-PT003",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 15
+    },
+    {
+      "nome": "Asanegra - Boretempestade, O Vento Perverso",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Ultra Raro",
+      "colecao": "MP23-PT188",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Dharc, O Encantador das Trevas, Sombrio",
+      "idioma": "Português",
+      "tipo": "Monstro Link",
+      "raridade": "Ultra Raro",
+      "colecao": "MP23-PT025",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Banir Vendas",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Super Raro",
+      "colecao": "MP23-PT035",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 25
+    },
+    {
+      "nome": "Dinomorfia Diplos",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "MP23-PT010",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Felicidade da Boneca",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "MP23-PT056",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.25
+    },
+    {
+      "nome": "Psi-Armacao Senhor Omega",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Ultra Raro",
+      "colecao": "DUOV-PT080",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Fantasma Belle & Mansao Assombrada",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-PT004",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 25
+    },
+    {
+      "nome": "Fantasma Belle & Mansao Assombrada",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "MP22-PT258",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 15
+    },
+    {
+      "nome": "Fascinacao das Trevas",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "BROL-PT088",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 9
+    },
+    {
+      "nome": "Ciclone Cosmico",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-PT043",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 6
+    },
+    {
+      "nome": "Florescer de Cinzas & Primavera Feliz",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-PT003",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 60
+    },
+    {
+      "nome": "Artefato Lanca do Destino",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-PT033",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 12
+    },
+    {
+      "nome": "PSI-Armacao Equipamento Gama",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Raro",
+      "colecao": "TOCH-PT036",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 15
+    },
+    {
+      "nome": "PSI-Armacao Condutor",
+      "idioma": "Português",
+      "tipo": "Monstro Normal",
+      "raridade": "Raro",
+      "colecao": "TOCH-PT025",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.25
+    },
+    {
+      "nome": "Super Polimerizacao",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-PT040",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 50
+    },
+    {
+      "nome": "Ocultador de Efeitos",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-PT028",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 15
+    },
+    {
+      "nome": "Chamado da Cova",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-PT044",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Pot of Desires",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "CT14-EN004",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Spellbook of Secrets",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SR08-EN027",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Mago do Livro de Magia da Profecia",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR08-PT018",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Livro de Magia do Conhecimento",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Super Raro",
+      "colecao": "INCH-PT059",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Neos, o HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Normal",
+      "raridade": "Quarter Century Secret Rare",
+      "colecao": "TN23-PT006",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "Neos, o HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Normal",
+      "raridade": "Gold Raro",
+      "colecao": "MGED-PT004",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 5
+    },
+    {
+      "nome": "HEROI do Destino - Malicioso",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "LEHD-PTA04",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Plasma - Heros De La Destinee",
+      "idioma": "Francês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "CT04-FR003",
+      "quantidade": 1,
+      "condicao": "MUITO USADO",
+      "preco": 15
+    },
+    {
+      "nome": "HEROI do Destino - Plasma",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Gold Raro",
+      "colecao": "MGED-PT007",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Elementar Hero Stratos",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Parallel Raro",
+      "colecao": "DT03-EN058",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 30
+    },
+    {
+      "nome": "Vyon, o HEROI da Visao",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "BLHR-PT059",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 15
+    },
+    {
+      "nome": "Vision Hero Vyon",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "DUSA-EN021",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "HEROI do Destino - Comandante dos Discos",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "LEHD-PTA08",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Faris, o HEROI da Visao",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "BLHR-PT010",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 25
+    },
+    {
+      "nome": "HEROI do Destino - Anjo Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "DESO-PT005",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 20
+    },
+    {
+      "nome": "Aprimorado, o HEROI da Visao",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "BLHR-PT007",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 25
+    },
+    {
+      "nome": "Neos Alius, o HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDHS-PT008",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Neos Alius, o HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Gold Raro",
+      "colecao": "PGL2-PT029",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Homem em Chamas, o HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "WSUP-PT032",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 5
+    },
+    {
+      "nome": "Nevoa Sombria, o HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "SDHS-PT001",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "HEROI do Destino - Decisor",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "DESO-PT003",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Homem Bolha, o HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDHS-PT012",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "HEROI do Destino - Celestial",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "DUOV-PT069",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1.5
+    },
+    {
+      "nome": "HEROI do Destino - Negador",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "BODE-PT018",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Destiny HERO - Dynatag",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "DESO-EN002",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.3
+    },
+    {
+      "nome": "Destiny HERO - Dogma",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "LCGX-EN128",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Neo-Spacian Aqua Dolphin",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "POTD-EN003",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "Cruz Cruzado, o HEROI Xtra",
+      "idioma": "Português",
+      "tipo": "Monstro Link",
+      "raridade": "Raro",
+      "colecao": "DANE-PT045",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Xtra HERO Cross Crusades",
+      "idioma": "Inglês",
+      "tipo": "Monstro Link",
+      "raridade": "Raro",
+      "colecao": "DANE-EN045",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Condutor Maravilha, o HEROI Xtra",
+      "idioma": "Português",
+      "tipo": "Monstro Link",
+      "raridade": "Ultra Raro",
+      "colecao": "LEHD-PTA37",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Dizimador Horrifico, o HEROI Xtra",
+      "idioma": "Português",
+      "tipo": "Monstro Link",
+      "raridade": "Ultra Raro",
+      "colecao": "LEHD-PTA00",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Blast, o HEROI Mascarado",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Super Raro",
+      "colecao": "RATE-PTSE2",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Destiny HERO - Dangerous",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "BLHR-EN063",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Masked HERO Anki",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Gold Secret Rare",
+      "colecao": "PGL2-EN011",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Masked HERO Dark Law",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "DUSA-EN094",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "Masked HERO Dark Law",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Super Raro",
+      "colecao": "SDHS-EN44",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Masked HERO Acid",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Secreto Raro",
+      "colecao": "PRCI-EN018",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 20
+    },
+    {
+      "nome": "Vision HERO Trinity",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Super Raro",
+      "colecao": "GENF-EN091",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 15
+    },
+    {
+      "nome": "Trindade, o HEROI da Visao",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "BLHR-PT062",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Elementar HERO Sunrise",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Secreto Raro",
+      "colecao": "LDS3-EN104",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 15
+    },
+    {
+      "nome": "Elementar HERO Escuridao",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Parallel Raro",
+      "colecao": "SP13-EN046",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Escuridao, o HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Secreto Raro",
+      "colecao": "BLAR-PT056",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 7
+    },
+    {
+      "nome": "Destiny HERO - Dystopia",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Secreto Raro",
+      "colecao": "DESO-EN004",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "HEROI do Destino - Diluculotopia",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Secreto Raro",
+      "colecao": "BLLR-PT025",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Desperte Seu HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "MAZE-PT014",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 70
+    },
+    {
+      "nome": "Adoracao, o HEROI da Visao",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "BLLR-PT057",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Neos Kluger, o HEROI do Elemento",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "GFP2-PT003",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    },
+    {
+      "nome": "Destiny HERO - Destroyer Phoenix Enforger",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Secreto Raro",
+      "colecao": "MP22-EN209",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 50
+    },
+    {
+      "nome": "Contrato HERO Chaos",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "SDHS-EN041",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Masked HERO Koga",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Super Raro",
+      "colecao": "SDHS-EN042",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Elementar HERO Core",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Super Raro",
+      "colecao": "SHVI-ENSE2",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 8
+    },
+    {
+      "nome": "Elementar HERO Divine Wind",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Super Raro",
+      "colecao": "SDHS-EN043",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Fusion Destiny",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Super Raro",
+      "colecao": "DANE-EN054",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 8
+    },
+    {
+      "nome": "Fusion Destiny",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Secreto Raro",
+      "colecao": "BLCR-EN088",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 15
+    },
+    {
+      "nome": "Fusion Destiny",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "MP20-EN075",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "Mudar a Mascara",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "GFTP-PT112",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Mudar a Mascara",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Gold Raro",
+      "colecao": "PGL3-PT083",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 5
+    },
+    {
+      "nome": "Mask Change",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Gold Raro",
+      "colecao": "PGL3-EN083",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 5
+    },
+    {
+      "nome": "A HERO Lives",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "GENF-EN098",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "A HERO Lives",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "MAMA-EN081",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Um HEROI Vive",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "MAMA-PT081",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Mudar a Mascara II",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Gold Raro",
+      "colecao": "PGL3-PT086",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "D - Forca",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Secreto Raro",
+      "colecao": "BROL-PT009",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "Reinforcement of the Army",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SDHS-EN032",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.25
+    },
+    {
+      "nome": "Sacar o Destino",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "LEHD-PTA17",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Polimerizacao",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "LEHD-PTA22",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.25
+    },
+    {
+      "nome": "Ficha de Fera Cristalina",
+      "idioma": "Português",
+      "tipo": "Ficha",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT049",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.49
+    },
+    {
+      "nome": "Jesse Anderson - Conexao a Fera Cristalina",
+      "idioma": "Português",
+      "tipo": "Ficha",
+      "raridade": "Super Raro",
+      "colecao": "SDCB-PT047",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.49
+    },
+    {
+      "nome": "Fera Cristalina Aguia Cobalto",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT006",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Fera Cristalina Gata Ametista",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT002",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Fera Cristalina Carbunculo Rubi",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT001",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Fera Cristalina Tartaruga Esmeralda",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT003",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Fera Cristalina Mamute Ambar",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT005",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Dragao Arco-Iris",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "LED2-PT043",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Cidade Antiga - Ruinas Arco-Iris",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT018",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Bencao Cristalina",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT021",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Abundancia Cristalina",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT022",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Farol Cristalino",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT020",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Libertacao Cristalina",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT025",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Promessa Cristalina",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SDCB-PT023",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.49
+    },
+    {
+      "nome": "Crystal Raigeki",
+      "idioma": "Inglês",
+      "tipo": "Armadilha",
+      "raridade": "Comum",
+      "colecao": "FOTB-EN048",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.49
+    },
+    {
+      "nome": "Naelshaddoll Ariel",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "SDSH-EN003",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.49
+    },
+    {
+      "nome": "Asanegra - Zefiro, A Elite",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "DUOV-PT066",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "Shaddoll Falco",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "BLHR-EN080",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.49
+    },
+    {
+      "nome": "Aluber, o Bobo da Corte de Despia",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "MP22-PT123",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "Evilswarm Exciton Knight",
+      "idioma": "Inglês",
+      "tipo": "Monstro XYZ",
+      "raridade": "Ultra Raro",
+      "colecao": "BLLR-EN068",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 7
+    },
+    {
+      "nome": "Augoeides, O Invokado",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Super Raro",
+      "colecao": "ETCO-PT040",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Masquerade, o Dragao Ardente",
+      "idioma": "Português",
+      "tipo": "Monstro Fusao",
+      "raridade": "Super Raro",
+      "colecao": "MP22-PT208",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "El Shaddoll Apkallone",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "SDSH-EN045",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 1
+    },
+    {
+      "nome": "El Shaddoll Winda",
+      "idioma": "Inglês",
+      "tipo": "Monstro Fusao",
+      "raridade": "Ultra Raro",
+      "colecao": "DUEA-EN048",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 7
+    },
+    {
+      "nome": "Shaddoll Fusion",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Super Raro",
+      "colecao": "SDSH-EN049",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Marcado em Bom Humor",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "MP22-PT217",
+      "quantidade": 4,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Albion, o Dragao Encoberto",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "MP22-PT125",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Dragao Armado do Trovao LV7",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "MP22-PT002",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.99
+    },
+    {
+      "nome": "Zefiro Celeste - Miradora",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "MP22-PT016",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.79
+    },
+    {
+      "nome": "Cervoconstrutor",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "MP22-PT245",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.2
+    },
+    {
+      "nome": "Pesadelo de Olho Negro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "MP22-PT072",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.13
+    },
+    {
+      "nome": "Bebe Lamadragao",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "MP22-PT172",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1.58
+    },
+    {
+      "nome": "O Transgressor Deus da Ruina",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "MP22-PT274",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.99
+    },
+    {
+      "nome": "O Verdadeiro Deus Sol",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "MP22-PT275",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.74
+    },
+    {
+      "nome": "Paleozoico Cambroraster",
+      "idioma": "Português",
+      "tipo": "Monstro Link",
+      "raridade": "Super Raro",
+      "colecao": "MP22-PT088",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.09
+    },
+    {
+      "nome": "Gelojade Tremora",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "MP22-PT191",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.25
+    },
+    {
+      "nome": "Portao do Mundo Virtual - Xuanwu",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Super Raro",
+      "colecao": "MP22-PT042",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.05
+    },
+    {
+      "nome": "Cronomalia Vimana",
+      "idioma": "Português",
+      "tipo": "Monstro XYZ",
+      "raridade": "Raro",
+      "colecao": "MP22-PT149",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.65
+    },
+    {
+      "nome": "Tragedia Despiana",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "MP22-PT122",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.15
+    },
+    {
+      "nome": "Livro do Eclipse Lunar",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Super Raro",
+      "colecao": "MP22-PT099",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.75
+    },
+    {
+      "nome": "Diabolica, A General Draconique",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "DUNE-PT096",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Cauda de Fadas - Neves",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "TDIL-PT042",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.49
+    },
+    {
+      "nome": "Dragao Arco-iris",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "SDCB-PT041",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.75
+    },
+    {
+      "nome": "Black Rose Dragon",
+      "idioma": "Inglês",
+      "tipo": "Monstro Sincro",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-EN010",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.2
+    },
+    {
+      "nome": "Brionac, o Dragao da Barreira de Gelo",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-EN008",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.35
+    },
+    {
+      "nome": "Brionac, o Dragao da Barreira de Gelo",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Super Raro",
+      "colecao": "SDFC-PT043",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.99
+    },
+    {
+      "nome": "Arquidemonio Senhor dos Pensamentos",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Ultra Raro",
+      "colecao": "BROL-PT070",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 7
+    },
+    {
+      "nome": "Red Dragon Archfiend",
+      "idioma": "Inglês",
+      "tipo": "Monstro Sincro",
+      "raridade": "Comum",
+      "colecao": "HSRD-EN023",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.4
+    },
+    {
+      "nome": "Catastor, Aliado da Justica",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDE-PT007",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.19
+    },
+    {
+      "nome": "Lutador Colossal",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Raro",
+      "colecao": "VASM-PT054",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.25
+    },
+    {
+      "nome": "Dragao Arco-iris QC",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Quarter Century Secret Rare",
+      "colecao": "TN23-PT004",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 9
+    },
+    {
+      "nome": "Espantagarra Luz-Heart",
+      "idioma": "Português",
+      "tipo": "Monstro Link",
+      "raridade": "Secreto Raro",
+      "colecao": "MP23-PT136",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 7
+    },
+    {
+      "nome": "Arianna, A Serva de Labrinto",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "MP23-PT229",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 14.99
+    },
+    {
+      "nome": "Boas-Vindas a Labrinto",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Secreto Raro",
+      "colecao": "MP23-PT235",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 10
+    },
+    {
+      "nome": "Espantagarra Reinchheart",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "MP23-PT068",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Quickdraw Synchron",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDSE-PT005",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.3
+    },
+    {
+      "nome": "Quickdraw Synchron",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "LED6-PT032",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Junk Synchron",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "5DS3-EN010",
+      "quantidade": 1,
+      "condicao": "MUITO USADO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Junk Synchron",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "5DS1-EN011",
+      "quantidade": 1,
+      "condicao": "MUITO USADO",
+      "preco": 1.89
+    },
+    {
+      "nome": "Explorador Sincron",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "LED8-PT048",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.15
+    },
+    {
+      "nome": "Road Warrior",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Comum",
+      "colecao": "LC5D-EN035",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Turbo Warrior",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Raro",
+      "colecao": "DP08-EN015",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2
+    },
+    {
+      "nome": "Drill Warrior",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Raro",
+      "colecao": "DP10-EN018",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 5
+    },
+    {
+      "nome": "Dragao da Poeira Estelar",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Raro",
+      "colecao": "TOCH-PT050",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 1.49
+    },
+    {
+      "nome": "Guardiao Goyo",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Ultra Raro",
+      "colecao": "BLAR-PT057",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.99
+    },
+    {
+      "nome": "Dragao Fada Antigo",
+      "idioma": "Português",
+      "tipo": "Monstro Sincro",
+      "raridade": "Raro",
+      "colecao": "MAZE-PT050",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.2
+    },
+    {
+      "nome": "Junk Berserker",
+      "idioma": "Inglês",
+      "tipo": "Monstro Sincro",
+      "raridade": "Ultimate Raro",
+      "colecao": "EXVC-EN037",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 30
+    },
+    {
+      "nome": "Junk Archer",
+      "idioma": "Inglês",
+      "tipo": "Monstro Sincro",
+      "raridade": "Secreto Raro",
+      "colecao": "BLMR-EN073",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2.5
+    },
+    {
+      "nome": "Phoenix Wing Wind Blast",
+      "idioma": "Inglês",
+      "tipo": "Armadilha",
+      "raridade": "Super Raro",
+      "colecao": "HISU-EN045",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 4
+    },
+    {
+      "nome": "Phoenix Wing Wind Blast",
+      "idioma": "Inglês",
+      "tipo": "Armadilha",
+      "raridade": "Comum",
+      "colecao": "SDOK-EN033",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Estrada da Luz Estrelada",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Ultra Raro",
+      "colecao": "BROL-PT072",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Estrada da Luz Estrelada",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Raro",
+      "colecao": "TOCH-PT060",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.3
+    },
+    {
+      "nome": "Decreto Real",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Raro",
+      "colecao": "MAZE-PT064",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.99
+    },
+    {
+      "nome": "Corrente Demoniaca",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Comum",
+      "colecao": "YS17-PT039",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Fiendish Chain",
+      "idioma": "Inglês",
+      "tipo": "Armadilha",
+      "raridade": "Comum",
+      "colecao": "SDWA-EN036",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Chamado dos Assombrados",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Comum",
+      "colecao": "YS18-PT035",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.15
+    },
+    {
+      "nome": "Chamado dos Assombrados",
+      "idioma": "Português",
+      "tipo": "Armadilha",
+      "raridade": "Comum",
+      "colecao": "SDBE-PT037",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.15
+    },
+    {
+      "nome": "Pote da Avarice",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SDSH-PT031",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.6
+    },
+    {
+      "nome": "Pot of Avarice",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SGX4-END12",
+      "quantidade": 4,
+      "condicao": "NOVO",
+      "preco": 0.99
+    },
+    {
+      "nome": "Tempestade Pesada",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SD1-PT016",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.1
+    },
+    {
+      "nome": "Controle Mental",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "MAGO-PT138",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 2.2
+    },
+    {
+      "nome": "Book of Moon",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "TU01-EN012",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 1
+    },
+    {
+      "nome": "E - Emergency Call",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "LCGX-EN089",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.15
+    },
+    {
+      "nome": "Lightning Vortex",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SD09-EN026",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.1
+    },
+    {
+      "nome": "Wivern de Olhos Vermelhos",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "AP08-PT019",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "D.D. Assailant",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDDE-EN017",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "D.D. Lady Guerreira",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "BP02-PT021",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Penguin Soldier",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "5DS2-EN009",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Goblin Inexperiente",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "DEM1-PT014",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.1
+    },
+    {
+      "nome": "Investida da Brigada da Luz",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SR02-PT033",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.15
+    },
+    {
+      "nome": "Controlador de Inimigos",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SDBE-PT032",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.15
+    },
+    {
+      "nome": "Enemy Controller",
+      "idioma": "Inglês",
+      "tipo": "Magia",
+      "raridade": "Comum",
+      "colecao": "SD10-EN027",
+      "quantidade": 1,
+      "condicao": "MUITO USADO",
+      "preco": 0.05
+    },
+    {
+      "nome": "Ryko, Cacador Luminoso",
+      "idioma": "Português",
+      "tipo": "Magia",
+      "raridade": "Ultra Raro",
+      "colecao": "RA02-PT003",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.25
+    },
+    {
+      "nome": "Mega Hamster Super-Agil",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "RA02-PT004",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Mega Hamster Super-Agil",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Secreto Raro",
+      "colecao": "RA02-PT004-SEC",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 1.5
+    },
+    {
+      "nome": "Garoth, O Guerreiro Luminoso",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "BLC1-PT056",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.15
+    },
+    {
+      "nome": "Ehren, Lightsworn Monk",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDLI-EN011",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Aurkus, Lightsworn Druid",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDLI-EN013",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Sangan",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "LDS3-PT001",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 5
+    },
+    {
+      "nome": "Spined Gillman",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDRE-EN009",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Dragao da Poeira Estelar - Modo de Ataque",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "OP10-PT015",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.15
+    },
+    {
+      "nome": "Ryko, Cacador Luminoso",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDLI-PT015",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.3
+    },
+    {
+      "nome": "Ryko, Cacador Luminoso",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "YS18-PT018",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.2
+    },
+    {
+      "nome": "Ryko, Lightsworn Hunter",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDDC-EN023",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.5
+    },
+    {
+      "nome": "Koa'ki Meiru Drago",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "RGBT-EN024",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 9
+    },
+    {
+      "nome": "Honesto",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "SPWA-PT047",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 1.5
+    },
+    {
+      "nome": "Tragoedia",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR01-PT017",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 0.2
+    },
+    {
+      "nome": "Snowman Eater",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDRE-EN016",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.1
+    },
+    {
+      "nome": "Snowman Eater",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "BP01-EN064",
+      "quantidade": 1,
+      "condicao": "USADA",
+      "preco": 0.1
+    },
+    {
+      "nome": "Florescer do Fogo Solitario",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SDBT-PT013",
+      "quantidade": 2,
+      "condicao": "NOVO",
+      "preco": 0.1
+    },
+    {
+      "nome": "Debris Dragon",
+      "idioma": "Inglês",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "DP09-EN004",
+      "quantidade": 2,
+      "condicao": "USADA",
+      "preco": 0.1
+    },
+    {
+      "nome": "Dragao do Escombro",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "MYFI-PT043",
+      "quantidade": 3,
+      "condicao": "NOVO",
+      "preco": 1.2
+    },
+    {
+      "nome": "Tytannial, Princesa das Camelias",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Super Raro",
+      "colecao": "SESL-PT041",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Dente-de-Leao",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "SR01-PT018",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 0.5
+    },
+    {
+      "nome": "Dente-de-Leao",
+      "idioma": "Português",
+      "tipo": "Monstro Efeito",
+      "raridade": "Ultra Raro",
+      "colecao": "DUDA-PT059",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 5
+    },
+    {
+      "nome": "Dente-de-Leao",
+      "idioma": "Coreano",
+      "tipo": "Monstro Efeito",
+      "raridade": "Comum",
+      "colecao": "20AP-KR034",
+      "quantidade": 1,
+      "condicao": "NOVO",
+      "preco": 3
+    }
+  ]
+}
