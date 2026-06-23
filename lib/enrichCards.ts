@@ -82,19 +82,33 @@ async function fetchCardsBySetName(setName: string, language?: string): Promise<
   }
 }
 
+// Fetch a single card by ID, optionally in a given language.
+// Returns the desc string or null if unavailable.
+async function fetchDescById(id: number, language?: "pt"): Promise<string | null> {
+  try {
+    const langParam = language ? `&language=${language}` : ""
+    const res = await fetch(`${API_BASE}?id=${id}${langParam}`, { next: { revalidate: 86400 } })
+    if (!res.ok) return null
+    const json: APISetResponse = await res.json()
+    return json.data?.[0]?.desc ?? null
+  } catch {
+    return null
+  }
+}
+
+// ptDesc and enDesc are explicit — never falls back to apiCard.desc for the wrong language.
 function toEnriched(
   local: CollectionCard,
   apiCard: APICard,
-  ptDesc?: string,
-  enDesc?: string
+  ptDesc: string | undefined,
+  enDesc: string | undefined
 ): EnrichedCard {
-  const resolvedEn = enDesc ?? apiCard.desc
   return {
     ...local,
     apiId: apiCard.id,
-    desc: resolvedEn,
+    desc: enDesc ?? ptDesc,
     descPt: ptDesc,
-    descEn: resolvedEn,
+    descEn: enDesc,
     atk: apiCard.atk,
     def: apiCard.def,
     level: apiCard.level,
@@ -197,15 +211,50 @@ export async function enrichCards(collection: CollectionCard[]): Promise<Enriche
     return toEnriched(card, apiCard, ptPair?.desc, apiCard.desc)
   })
 
-  // 6. Name deduplication: if another card with the same nome already has an image, reuse it
-  //    e.g. "Dente-de-Leao" SR01 matched -> DUDA and 20AP versions inherit the image
-  const nameToImage = new Map<string, string>()
+  // 6. Name deduplication: if another card with the same nome already has an image,
+  //    reuse its image AND descriptions (e.g. same card in two different sets)
+  const nameToData = new Map<string, { imageUrl: string; descPt?: string; descEn?: string }>()
   for (const card of afterEnSearch) {
-    if (card.imageUrl) nameToImage.set(norm(card.nome), card.imageUrl)
+    if (card.imageUrl) {
+      nameToData.set(norm(card.nome), {
+        imageUrl: card.imageUrl,
+        descPt: card.descPt,
+        descEn: card.descEn,
+      })
+    }
   }
-  return afterEnSearch.map((card) =>
-    !card.imageUrl && nameToImage.has(norm(card.nome))
-      ? { ...card, imageUrl: nameToImage.get(norm(card.nome)) }
-      : card
+  const afterDedup = afterEnSearch.map((card) => {
+    if (card.imageUrl) return card
+    const data = nameToData.get(norm(card.nome))
+    if (!data) return card
+    return {
+      ...card,
+      imageUrl: data.imageUrl,
+      descPt: card.descPt ?? data.descPt,
+      descEn: card.descEn ?? data.descEn,
+    }
+  })
+
+  // 7. Fill missing PT desc for cards that have an apiId but no descPt yet.
+  //    Uses individual ID fetch (cached 24 h) so coverage is maximised without
+  //    re-fetching whole sets a second time.
+  const missingPtIds = Array.from(
+    new Set(afterDedup.filter((c) => c.apiId && !c.descPt).map((c) => c.apiId!))
   )
+
+  const ptFill = new Map<number, string>()
+  await Promise.all(
+    missingPtIds.map(async (id) => {
+      const desc = await fetchDescById(id, "pt")
+      if (desc) ptFill.set(id, desc)
+    })
+  )
+
+  return afterDedup.map((card) => {
+    if (!card.apiId || !ptFill.has(card.apiId)) return card
+    const ptDesc = ptFill.get(card.apiId)!
+    // Skip if the API returned the same text as EN (no real PT translation)
+    if (card.descEn && ptDesc.trim() === card.descEn.trim()) return card
+    return { ...card, descPt: ptDesc }
+  })
 }

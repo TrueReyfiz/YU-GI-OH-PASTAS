@@ -74,7 +74,7 @@ export default function CardModal({ card, onClose }: CardModalProps) {
 
   const rar = getRarity(card.raridade)
   const formattedPrice = card.preco.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
-  const hasBothLangs = !!(card.descPt && card.descEn)
+  const hasBothLangs = !!(card.descPt && card.descEn && card.descPt.trim() !== card.descEn.trim())
   const activeDesc = descLang === "pt" ? (card.descPt ?? card.descEn) : (card.descEn ?? card.descPt)
 
   const stats: { label: string; value: number }[] = []
