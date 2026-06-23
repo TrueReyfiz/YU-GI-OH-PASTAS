@@ -32,7 +32,35 @@ model CardSet {
   setRarity String?
   cardId    Int
 
-  card GlobalCard @relation(fields: [cardId], references: [id])
+  card      GlobalCard @relation(fields: [cardId], references: [id])
+  userCards UserCard[]
 
   @@index([cardId])
+}
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  name      String?
+  password  String
+  createdAt DateTime   @default(now())
+
+  cards UserCard[]
+}
+
+model UserCard {
+  id         String   @id @default(cuid())
+  userId     String
+  setCode    String
+  idioma     String   @default("Português")
+  condicao   String   @default("NM")
+  quantidade Int      @default(1)
+  preco      Float    @default(0)
+  createdAt  DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cardSet CardSet @relation(fields: [setCode], references: [setCode])
+
+  @@index([userId])
+  @@index([setCode])
 }

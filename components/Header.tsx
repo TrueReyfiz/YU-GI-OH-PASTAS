@@ -1,9 +1,15 @@
+"use client"
+
+import { signOut } from "next-auth/react"
+
 interface HeaderProps {
   totalCards: number
   totalValue: number
+  userName: string
+  onAddCard: () => void
 }
 
-export default function Header({ totalCards, totalValue }: HeaderProps) {
+export default function Header({ totalCards, totalValue, userName, onAddCard }: HeaderProps) {
   const formattedValue = totalValue.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
@@ -24,14 +30,28 @@ export default function Header({ totalCards, totalValue }: HeaderProps) {
             A COLEÇÃO
           </div>
           <div className="font-condensed font-medium text-[10px] tracking-[.24em] text-dim mt-[6px] uppercase">
-            Yu-Gi-Oh! Estampas Ilustradas · Acervo Pessoal
+            Yu-Gi-Oh! Estampas Ilustradas · {userName}
           </div>
         </div>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-6 flex-wrap">
           <Stat label="CARTAS" value={String(totalCards)} />
           <div className="w-px h-[34px] bg-white/[0.09]" />
           <Stat label="VALOR DA COLEÇÃO" value={formattedValue} isGold />
+
+          <button
+            onClick={onAddCard}
+            className="font-condensed font-semibold text-[12px] tracking-[.08em] text-gold border border-gold/40 rounded-[6px] py-[9px] px-[16px] hover:bg-gold/5 transition-colors cursor-pointer"
+          >
+            + ADICIONAR
+          </button>
+
+          <button
+            onClick={() => signOut({ callbackUrl: "/login" })}
+            className="font-condensed font-semibold text-[12px] tracking-[.08em] text-dim hover:text-secondary transition-colors cursor-pointer bg-transparent border-none"
+          >
+            SAIR
+          </button>
         </div>
       </div>
     </header>
@@ -41,8 +61,14 @@ export default function Header({ totalCards, totalValue }: HeaderProps) {
 function Stat({ label, value, isGold }: { label: string; value: string; isGold?: boolean }) {
   return (
     <div className="text-right">
-      <p className="font-condensed font-medium text-[9px] tracking-[.18em] text-dim uppercase">{label}</p>
-      <p className={`font-condensed font-bold text-[24px] leading-tight ${isGold ? "text-gold" : "text-primary"}`}>
+      <p className="font-condensed font-medium text-[9px] tracking-[.18em] text-dim uppercase">
+        {label}
+      </p>
+      <p
+        className={`font-condensed font-bold text-[24px] leading-tight ${
+          isGold ? "text-gold" : "text-primary"
+        }`}
+      >
         {value}
       </p>
     </div>
