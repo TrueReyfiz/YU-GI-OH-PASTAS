@@ -3,10 +3,16 @@ export interface CollectionCard {
   idioma: string
   tipo: string
   raridade: string
-  colecao: string
+  colecao: string  // setCode — obrigatório
   quantidade: number
   condicao: string
   preco: number
+}
+
+export interface PriceResult {
+  preco: number
+  fonte: string
+  moeda: "BRL" | "BRL_estimado"
 }
 
 export interface APICard {
@@ -29,6 +35,7 @@ export interface APISetResponse {
 }
 
 export interface EnrichedCard extends CollectionCard {
+  userCardId?: string
   apiId?: number
   desc?: string
   descPt?: string

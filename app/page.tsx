@@ -16,6 +16,7 @@ export default async function Page() {
   })
 
   const enriched: EnrichedCard[] = userCards.map((uc) => ({
+    userCardId: uc.id,
     nome: uc.cardSet.card.namePt ?? uc.cardSet.card.name,
     apiId: uc.cardSet.card.id,
     desc: uc.cardSet.card.desc,

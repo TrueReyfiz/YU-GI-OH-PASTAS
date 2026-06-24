@@ -3,23 +3,27 @@
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
+import type { PriceResult } from "@/types/card"
 
-interface SearchResult {
-  setCode: string
-  setName: string
-  setRarity: string | null
-  card: {
-    id: number
-    name: string
-    namePt: string | null
-    type: string
-    imageUrl: string
-    atk: number | null
-    def: number | null
-    level: number | null
-    attribute: string | null
-  }
+interface GlobalCardResult {
+  id: number
+  name: string
+  namePt: string | null
+  type: string
+  imageUrl: string | null
+  atk: number | null
+  def: number | null
+  level: number | null
+  attribute: string | null
 }
+
+interface EditionResult {
+  setCode: string
+  setName: string | null
+  setRarity: string | null
+}
+
+type Stage = "search" | "editions" | "form"
 
 const CONDICOES = ["NM", "LP", "MP", "HP", "DMG"]
 const IDIOMAS = ["Português", "Inglês", "Japonês", "Coreano"]
@@ -31,14 +35,20 @@ interface AddCardModalProps {
 }
 
 export default function AddCardModal({ open, onClose }: AddCardModalProps) {
+  const [stage, setStage] = useState<Stage>("search")
   const [query, setQuery] = useState("")
-  const [results, setResults] = useState<SearchResult[]>([])
+  const [results, setResults] = useState<GlobalCardResult[]>([])
   const [searching, setSearching] = useState(false)
-  const [selected, setSelected] = useState<SearchResult | null>(null)
+  const [selectedCard, setSelectedCard] = useState<GlobalCardResult | null>(null)
+  const [editions, setEditions] = useState<EditionResult[]>([])
+  const [loadingEditions, setLoadingEditions] = useState(false)
+  const [selectedEdition, setSelectedEdition] = useState<EditionResult | null>(null)
   const [idioma, setIdioma] = useState("Português")
   const [condicao, setCondicao] = useState("NM")
   const [quantidade, setQuantidade] = useState(1)
   const [preco, setPreco] = useState("")
+  const [fetchingPrice, setFetchingPrice] = useState(false)
+  const [priceResult, setPriceResult] = useState<PriceResult | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState("")
   const inputRef = useRef<HTMLInputElement>(null)
@@ -52,8 +62,15 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
     }
   }, [open])
 
+  // Clear price when edition changes
   useEffect(() => {
-    if (selected) return
+    setPriceResult(null)
+    setPreco("")
+  }, [selectedEdition])
+
+  // Debounced search — only active in "search" stage
+  useEffect(() => {
+    if (stage !== "search") return
     const timer = setTimeout(async () => {
       if (query.trim().length < 2) {
         setResults([])
@@ -61,9 +78,11 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
       }
       setSearching(true)
       try {
-        const res = await fetch(`/api/cards/search?q=${encodeURIComponent(query.trim())}`)
+        const res = await fetch(
+          `/api/cards/search?q=${encodeURIComponent(query.trim())}`,
+        )
         const data = await res.json()
-        setResults(data)
+        setResults(Array.isArray(data) ? data : [])
       } catch {
         setResults([])
       } finally {
@@ -71,23 +90,74 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
       }
     }, 350)
     return () => clearTimeout(timer)
-  }, [query, selected])
+  }, [query, stage])
 
   function reset() {
+    setStage("search")
     setQuery("")
     setResults([])
     setSearching(false)
-    setSelected(null)
+    setSelectedCard(null)
+    setEditions([])
+    setLoadingEditions(false)
+    setSelectedEdition(null)
     setIdioma("Português")
     setCondicao("NM")
     setQuantidade(1)
     setPreco("")
+    setFetchingPrice(false)
+    setPriceResult(null)
     setSubmitError("")
+  }
+
+  function goBack() {
+    if (stage === "editions") {
+      setSelectedCard(null)
+      setEditions([])
+      setStage("search")
+    } else if (stage === "form") {
+      setSelectedEdition(null)
+      setStage("editions")
+    }
+  }
+
+  async function handleSelectCard(card: GlobalCardResult) {
+    setSelectedCard(card)
+    setStage("editions")
+    setLoadingEditions(true)
+    try {
+      const res = await fetch(`/api/cards/editions?cardId=${card.id}`)
+      const data = await res.json()
+      setEditions(Array.isArray(data) ? data : [])
+    } catch {
+      setEditions([])
+    } finally {
+      setLoadingEditions(false)
+    }
+  }
+
+  async function handleFetchPrice() {
+    if (!selectedEdition || fetchingPrice) return
+    setFetchingPrice(true)
+    setPriceResult(null)
+    try {
+      const res = await fetch(
+        `/api/price-scraper?codigo=${encodeURIComponent(selectedEdition.setCode)}`,
+      )
+      if (!res.ok) throw new Error()
+      const data: PriceResult = await res.json()
+      setPreco(String(data.preco))
+      setPriceResult(data)
+    } catch {
+      // falha silenciosa — usuário digita manualmente
+    } finally {
+      setFetchingPrice(false)
+    }
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!selected) return
+    if (!selectedEdition) return
     setSubmitting(true)
     setSubmitError("")
 
@@ -95,7 +165,7 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        setCode: selected.setCode,
+        setCode: selectedEdition.setCode,
         idioma,
         condicao,
         quantidade,
@@ -117,6 +187,12 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
 
   if (!open) return null
 
+  const stageTitle = {
+    search: "Adicionar Carta",
+    editions: "Escolher Edição",
+    form: "Detalhes da Carta",
+  }[stage]
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -129,9 +205,21 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/[.07]">
-          <h2 className="font-condensed font-bold text-[16px] tracking-[.1em] text-secondary uppercase">
-            Adicionar Carta
-          </h2>
+          <div className="flex items-center gap-3">
+            {stage !== "search" && (
+              <button
+                type="button"
+                onClick={goBack}
+                className="text-dim hover:text-secondary text-[18px] leading-none transition-colors"
+                aria-label="Voltar"
+              >
+                ←
+              </button>
+            )}
+            <h2 className="font-condensed font-bold text-[16px] tracking-[.1em] text-secondary uppercase">
+              {stageTitle}
+            </h2>
+          </div>
           <button
             onClick={onClose}
             className="text-dim hover:text-secondary text-[20px] leading-none transition-colors"
@@ -142,19 +230,19 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
         </div>
 
         <div className="overflow-y-auto flex-1 p-6 flex flex-col gap-5">
-          {/* Search */}
-          {!selected && (
+          {/* STAGE 1 — Busca de cartas */}
+          {stage === "search" && (
             <>
               <div className="flex flex-col gap-[7px]">
                 <label className="font-condensed font-semibold text-[10px] tracking-[.18em] text-dim uppercase">
-                  Buscar por nome ou código (ex: SR13-PT001)
+                  Nome (PT ou EN) ou Código (ex: LOB-PT001)
                 </label>
                 <input
                   ref={inputRef}
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Dark Magician, SR13, Dragão Branco…"
+                  placeholder="Dragão Branco, Blue-Eyes, SR13-PT001…"
                   className="bg-bg border border-white/[.09] focus:border-gold/40 rounded-[6px] px-[14px] py-[11px] text-[14px] outline-none transition-colors"
                 />
               </div>
@@ -166,10 +254,10 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
               {!searching && results.length > 0 && (
                 <ul className="flex flex-col gap-2">
                   {results.map((r) => (
-                    <li key={r.setCode}>
+                    <li key={r.id}>
                       <button
                         type="button"
-                        onClick={() => setSelected(r)}
+                        onClick={() => handleSelectCard(r)}
                         className="w-full flex items-center gap-3 bg-card border border-white/[.06] hover:border-gold/30 rounded-[6px] p-3 text-left transition-colors cursor-pointer"
                       >
                         <div
@@ -177,8 +265,8 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
                           style={{ width: 34, height: 50 }}
                         >
                           <Image
-                            src={r.card.imageUrl ?? CARD_BACK}
-                            alt={r.card.name}
+                            src={r.imageUrl ?? CARD_BACK}
+                            alt={r.name}
                             fill
                             className="object-cover"
                             unoptimized
@@ -186,15 +274,18 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="font-condensed font-semibold text-[13px] text-secondary truncate">
-                            {r.card.namePt ?? r.card.name}
+                            {r.namePt ?? r.name}
                           </div>
-                          <div className="font-mono text-[10px] text-dim mt-0.5">
-                            {r.setCode}
-                          </div>
-                          <div className="text-[10px] text-dim/70 mt-0.5 truncate">
-                            {r.setRarity} · {r.setName}
+                          {r.namePt && (
+                            <div className="text-[10px] text-dim/60 truncate">
+                              {r.name}
+                            </div>
+                          )}
+                          <div className="text-[10px] text-dim/70 mt-0.5">
+                            {r.type}
                           </div>
                         </div>
+                        <span className="text-dim text-[16px] shrink-0">›</span>
                       </button>
                     </li>
                   ))}
@@ -209,18 +300,96 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
             </>
           )}
 
-          {/* Selected card + form */}
-          {selected && (
+          {/* STAGE 2 — Seleção de edição */}
+          {stage === "editions" && selectedCard && (
+            <>
+              {/* Card preview */}
+              <div className="flex items-center gap-3 bg-card border border-white/[.06] rounded-[6px] p-3">
+                <div
+                  className="shrink-0 relative rounded overflow-hidden bg-black/20"
+                  style={{ width: 34, height: 50 }}
+                >
+                  <Image
+                    src={selectedCard.imageUrl ?? CARD_BACK}
+                    alt={selectedCard.name}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="font-condensed font-semibold text-[13px] text-secondary truncate">
+                    {selectedCard.namePt ?? selectedCard.name}
+                  </div>
+                  <div className="text-[10px] text-dim/70">
+                    {selectedCard.type}
+                  </div>
+                </div>
+              </div>
+
+              <p className="font-condensed font-semibold text-[10px] tracking-[.18em] text-dim uppercase -mb-2">
+                Selecionar Edição
+              </p>
+
+              {loadingEditions && (
+                <p className="text-[12px] text-dim text-center">
+                  Carregando edições…
+                </p>
+              )}
+
+              {!loadingEditions && editions.length > 0 && (
+                <ul className="flex flex-col gap-2">
+                  {editions.map((ed) => (
+                    <li key={ed.setCode}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedEdition(ed)
+                          setStage("form")
+                        }}
+                        className="w-full flex items-center justify-between gap-3 bg-card border border-white/[.06] hover:border-gold/30 rounded-[6px] px-4 py-3 text-left transition-colors cursor-pointer"
+                      >
+                        <div className="flex-1 min-w-0">
+                          <div className="font-mono text-[12px] text-gold/80">
+                            {ed.setCode}
+                          </div>
+                          {ed.setName && (
+                            <div className="text-[10px] text-dim/60 truncate mt-0.5">
+                              {ed.setName}
+                            </div>
+                          )}
+                        </div>
+                        {ed.setRarity && (
+                          <span className="text-[9px] text-dim bg-white/[.05] px-2 py-0.5 rounded shrink-0">
+                            {ed.setRarity}
+                          </span>
+                        )}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {!loadingEditions && editions.length === 0 && (
+                <p className="text-[12px] text-dim text-center">
+                  Nenhuma edição encontrada.
+                </p>
+              )}
+            </>
+          )}
+
+          {/* STAGE 3 — Formulário de atributos */}
+          {stage === "form" && selectedCard && selectedEdition && (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              {/* Selected card preview */}
+              {/* Preview carta + edição selecionada */}
               <div className="flex items-center gap-3 bg-card border border-gold/20 rounded-[6px] p-3">
                 <div
                   className="shrink-0 relative rounded overflow-hidden"
                   style={{ width: 34, height: 50 }}
                 >
                   <Image
-                    src={selected.card.imageUrl ?? CARD_BACK}
-                    alt={selected.card.name}
+                    src={selectedCard.imageUrl ?? CARD_BACK}
+                    alt={selectedCard.name}
                     fill
                     className="object-cover"
                     unoptimized
@@ -228,23 +397,27 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="font-condensed font-semibold text-[13px] text-gold truncate">
-                    {selected.card.namePt ?? selected.card.name}
+                    {selectedCard.namePt ?? selectedCard.name}
                   </div>
-                  <div className="font-mono text-[10px] text-dim mt-0.5">
-                    {selected.setCode}
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="font-mono text-[11px] text-gold/70 bg-gold/10 px-2 py-0.5 rounded">
+                      {selectedEdition.setCode}
+                    </span>
+                    {selectedEdition.setRarity && (
+                      <span className="text-[10px] text-dim bg-white/[.05] px-2 py-0.5 rounded">
+                        {selectedEdition.setRarity}
+                      </span>
+                    )}
                   </div>
+                  {selectedEdition.setName && (
+                    <div className="text-[10px] text-dim/60 mt-0.5 truncate">
+                      {selectedEdition.setName}
+                    </div>
+                  )}
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setSelected(null)}
-                  className="text-dim hover:text-secondary text-[18px] leading-none shrink-0 ml-1"
-                  aria-label="Trocar carta"
-                >
-                  ✕
-                </button>
               </div>
 
-              {/* Form fields */}
+              {/* Idioma / Condição */}
               <div className="grid grid-cols-2 gap-4">
                 <SelectField
                   label="IDIOMA"
@@ -260,32 +433,56 @@ export default function AddCardModal({ open, onClose }: AddCardModalProps) {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <NumberField
-                  label="QUANTIDADE"
-                  value={quantidade}
-                  min={1}
-                  max={99}
-                  onChange={setQuantidade}
-                />
-                <div className="flex flex-col gap-[7px]">
-                  <label className="font-condensed font-semibold text-[10px] tracking-[.18em] text-dim uppercase">
-                    PREÇO (R$)
-                  </label>
+              {/* Quantidade */}
+              <NumberField
+                label="QUANTIDADE"
+                value={quantidade}
+                min={1}
+                max={99}
+                onChange={setQuantidade}
+              />
+
+              {/* Preço com busca automática */}
+              <div className="flex flex-col gap-[7px]">
+                <label className="font-condensed font-semibold text-[10px] tracking-[.18em] text-dim uppercase">
+                  PREÇO (R$)
+                </label>
+                <div className="flex gap-2">
                   <input
                     type="number"
                     step="0.01"
                     min="0"
                     value={preco}
-                    onChange={(e) => setPreco(e.target.value)}
+                    onChange={(e) => {
+                      setPreco(e.target.value)
+                      setPriceResult(null)
+                    }}
                     placeholder="0,00"
-                    className="bg-bg border border-white/[.09] focus:border-gold/40 rounded-[6px] px-[14px] py-[11px] text-[14px] outline-none transition-colors"
+                    className="flex-1 bg-bg border border-white/[.09] focus:border-gold/40 rounded-[6px] px-[14px] py-[11px] text-[14px] outline-none transition-colors"
                   />
+                  <button
+                    type="button"
+                    onClick={handleFetchPrice}
+                    disabled={fetchingPrice}
+                    className="shrink-0 bg-bg border border-white/[.09] hover:border-gold/30 hover:text-secondary rounded-[6px] px-4 text-[11px] font-condensed font-semibold tracking-[.05em] text-dim transition-colors disabled:opacity-40 cursor-pointer whitespace-nowrap"
+                  >
+                    {fetchingPrice ? "Buscando…" : "Buscar Preço BR"}
+                  </button>
                 </div>
+                {priceResult && (
+                  <p className="text-[10px] text-gold/60">
+                    Fonte: {priceResult.fonte}
+                    {priceResult.moeda === "BRL_estimado" && (
+                      <span className="text-dim"> · estimativa convertida</span>
+                    )}
+                  </p>
+                )}
               </div>
 
               {submitError && (
-                <p className="text-[13px] text-red-400 text-center">{submitError}</p>
+                <p className="text-[13px] text-red-400 text-center">
+                  {submitError}
+                </p>
               )}
 
               <button
@@ -363,7 +560,9 @@ function NumberField({
         value={value}
         min={min}
         max={max}
-        onChange={(e) => onChange(Math.max(min, Math.min(max, parseInt(e.target.value) || min)))}
+        onChange={(e) =>
+          onChange(Math.max(min, Math.min(max, parseInt(e.target.value) || min)))
+        }
         className="bg-bg border border-white/[.09] focus:border-gold/40 rounded-[6px] px-[14px] py-[11px] text-[14px] outline-none transition-colors"
       />
     </div>
